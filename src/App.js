@@ -94,7 +94,7 @@ function ProfilePage({ user, wishlist, addToCart }) {
     }
     try {
       const token = await getIdToken(currentUser);
-      const response = await fetch("http://localhost:5000/api/protected", {
+      const response = await fetch("https://my-sport-shop-backend.onrender.com/api/protected", {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await response.json();
@@ -130,7 +130,7 @@ export default function App() {
   const [wishlist, setWishlist] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/message")
+    fetch("hhttps://my-sport-shop-backend.onrender.com/api/message")
       .then(response => response.json())
       .then(data => console.log("СЕРВЕР КАЖЕ:", data.message))
       .catch(error => console.error("Помилка з'єднання з сервером:", error));
