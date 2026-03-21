@@ -184,7 +184,7 @@ export default function App() {
         setWishlist([...wishlist, p]);
         alert(`${p.name} додано в обране!`);
       } else {
-        alert(result.message); 
+        alert("Помилка: " + error.message); 
       }
     } catch (error) {
       alert("Помилка зв'язку з сервером: " + error.message);
