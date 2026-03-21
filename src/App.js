@@ -159,7 +159,7 @@ export default function App() {
   const loadWishlist = async (uid) => {
     try {
       const response = await fetch(`https://my-sport-shop-backend.onrender.com/api/wishlist/${uid}`);
-      const data = await response.json();
+      setWishlist(Array.isArray(data) ? data : []);
       setWishlist(data);
     } catch (error) {
       console.error("Помилка завантаження списку:", error);
